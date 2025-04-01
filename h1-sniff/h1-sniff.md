@@ -6,11 +6,19 @@ Homework report for [h1 Sniff](https://terokarvinen.com/verkkoon-tunkeutuminen-j
 
 - [Introduction](#1-introduction)
 - [x. Read and summarize](#x-read-and-summarize)
+- [a. Linux](#a-linux)
+- [b. Can't fish](#b-cant-fish)
+- [c. Wireshark](#c-wireshark)
+- [d. Really TCP/IP](#d-really-tcpip)
+- [e. What did I surf?](#e-what-did-i-surf)
+- [f. (Optional) What browser is the user using?](#f-optional-what-browser-is-the-user-using)
+- [g. What model is the network card?](#g-what-model-is-the-network-card)
+- [f. What web server has the user surfed at?](#h-what-web-server-has-the-user-surfed-at)
 - [Bibliography](#bibliography)
 
 ## Introduction
 
-
+In today's homework, I configure my environment and get a little familiar with sniffing packets in Wireshark.
 
 ## x. Read and Summarize
 
@@ -63,6 +71,10 @@ I downloaded the surfing-secure.pcap file provided in the assignment and opened 
 Using Wireshark's IPv4 analysis, I can see there are seven different hosts. The host capturing the traffic and initiating the connections is 192.168.122.7, as it's found in 100% of the captured packets. Over half of the traffic happened with the host 139.162.131.217. The DNS queries reveal that IP-address belongs to the domain terokarvinen.com. Typing that address into Firefox takes me to app.terokarvinen.com.
 
 The following seems to indicate that the host communicated with a server in terokarvinen.com, and that it was secured. Any more specifically I cannot tell with my current limited skills in sniffing.
+
+## f. (Optional) What browser is the user using?
+
+I will skip this optional question, for now.
 
 ## g. What model is the network card?
 
