@@ -25,17 +25,17 @@ In today's homework, I configure my environment and get a little familiar with s
 
 ### Wireshark
 
-Wireshark is a network sniffer and analyzer. It can be used to capture traffic on network interfaces, which can then be analyzed in more detail. Packet captures can be saved as pcap-files, saving them for later analysis. Packets can be filtered in various ways to make finding them in the list easier. [[2]](#bibliography)
+Wireshark is a network sniffer and analyzer [[2]](#bibliography). It can be used to capture traffic on network interfaces, which can then be analyzed in more detail. Packet captures can be saved as pcap-files, saving them for later analysis. Packets can be filtered in various ways to make finding them in the list easier. 
 
 ### Network Interface Names on Linux
 
-These days, network interfaces on Linux use a naming scheme by systemd. Instead of 'eth', wired ethernet interfaces use the prefix 'en' (eg. enp1s0). WLAN, instead of 'wlan', use 'wl' now (eg. wlp4s0). The abbreviation 'lo' refers to the loopback address. You can check your interfaces with the command ``ip a``. [[3]](#bibliography)
+These days, network interfaces on Linux use a naming scheme by systemd [[3]](#bibliography). Instead of 'eth', wired ethernet interfaces use the prefix 'en' (eg. enp1s0). WLAN, instead of 'wlan', use 'wl' now (eg. wlp4s0). The abbreviation 'lo' refers to the loopback address. You can check your interfaces with the command ``ip a``. 
 
 The Kali Linux I will be using still uses the old naming scheme.
 
 ## a. Linux
 
-I downloaded a pre-built VirtualBox machine image with Kali Linux from [kali.org](https://www.kali.org/get-kali/#kali-virtual-machines), ran it, and changed the default password.
+I downloaded a pre-built VirtualBox machine image with Kali Linux from [kali.org](https://www.kali.org/get-kali/#kali-virtual-machines) [[4]](#bibliography), ran it, and changed the default password.
 
 I will use this virtual machine for the remainder of this homework, unless otherwise stated.
 
@@ -93,7 +93,7 @@ I used Wireshark to capture a couple of packets when I connected to example.com 
 
 ![06](imgs/h1-06.png)
 
-The four captured frames are communication happening between my Linux machine (10.0.2.15) and the server of example.com (185.15.59.224). Frames 1 and 3 contain application layer data that's being encrypted using TLSv1.2 (Transport Layer Security). Frames 2 and 4 contain transport layer data using TCP (Transmission Control Protocol). The ACK refers to acknowledgment that the receiver makes to tell the data has been received [[4]](#bibliography).
+The four captured frames are communication happening between my Linux machine (10.0.2.15) and the server of example.com (185.15.59.224). Frames 1 and 3 contain application layer data that's being encrypted using TLSv1.2 (Transport Layer Security). Frames 2 and 4 contain transport layer data using TCP (Transmission Control Protocol). The ACK refers to acknowledgment that the receiver makes to tell the data has been received [[5]](#bibliography).
 
 ![07](imgs/h1-07.png)
 
@@ -123,7 +123,10 @@ T. Karvinen, “Wireshark - Getting Started,” Terokarvinen.com, 2025. https://
 T. Karvinen, “Network Interface Names on Linux - wlp4s0 lo enp1s0,” Terokarvinen.com, 2025. https://terokarvinen.com/network-interface-linux/ (accessed Apr. 01, 2025).
 
 [4]
-Wikipedia Contributors, “Transport Layer Security,” Wikipedia, Mar. 26, 2019. https://en.wikipedia.org/wiki/Transport_Layer_Security (accessed Apr. 02, 2025).
+OffSec Services Limited, “Get Kali,” Kali Linux, 2025. https://www.kali.org/get-kali/#kali-virtual-machines (accessed Apr. 02, 2025).
 
 [5]
+Wikipedia Contributors, “Transport Layer Security,” Wikipedia, Mar. 26, 2019. https://en.wikipedia.org/wiki/Transport_Layer_Security (accessed Apr. 02, 2025).
+
+[6]
 Wikipedia Contributors, “Internet Protocol Suite,” Wikipedia, Mar. 25, 2019. https://en.wikipedia.org/wiki/Internet_Protocol_Suite (accessed Apr. 02, 2025).
