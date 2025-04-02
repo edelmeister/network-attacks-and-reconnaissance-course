@@ -14,6 +14,7 @@ Homework report for [h1 Sniff](https://terokarvinen.com/verkkoon-tunkeutuminen-j
 - [f. (Optional) What browser is the user using?](#f-optional-what-browser-is-the-user-using)
 - [g. What model is the network card?](#g-what-model-is-the-network-card)
 - [f. What web server has the user surfed at?](#h-what-web-server-has-the-user-surfed-at)
+- [i. Analysis](#i-analysis)
 - [Bibliography](#bibliography)
 
 ## Introduction
