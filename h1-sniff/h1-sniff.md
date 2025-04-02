@@ -1,6 +1,6 @@
 # Homework 1
 
-Homework report for [h1 Sniff](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h1-sniff) [1]
+Homework report for [h1 Sniff](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h1-sniff) [[1]](#bibliography)
 
 ## Table of Contents
 
@@ -24,11 +24,11 @@ In today's homework, I configure my environment and get a little familiar with s
 
 ### Wireshark
 
-Wireshark is a network sniffer and analyzer. It can be used to capture traffic on network interfaces, which can then be analyzed in more detail. Packet captures can be saved as pcap-files, saving them for later analysis. Packets can be filtered in various ways to make finding them in the list easier. [[2]]
+Wireshark is a network sniffer and analyzer. It can be used to capture traffic on network interfaces, which can then be analyzed in more detail. Packet captures can be saved as pcap-files, saving them for later analysis. Packets can be filtered in various ways to make finding them in the list easier. [[2]](#bibliography)
 
 ### Network Interface Names on Linux
 
-These days, network interfaces on Linux use a naming scheme by systemd. Instead of 'eth', wired ethernet interfaces use the prefix 'en' (eg. enp1s0). WLAN, instead of 'wlan', use 'wl' now (eg. wlp4s0). The abbreviation 'lo' refers to the loopback address. You can check your interfaces with the command ``ip a``. [[3]]
+These days, network interfaces on Linux use a naming scheme by systemd. Instead of 'eth', wired ethernet interfaces use the prefix 'en' (eg. enp1s0). WLAN, instead of 'wlan', use 'wl' now (eg. wlp4s0). The abbreviation 'lo' refers to the loopback address. You can check your interfaces with the command ``ip a``. [[3]](#bibliography)
 
 The Kali Linux I will be using still uses the old naming scheme.
 
@@ -88,7 +88,27 @@ As mentioned previously, the host 139.162.131.217 seems to belong to a server in
 
 ## i. Analysis
 
-WIP
+I used Wireshark to capture a couple of packets when I connected to example.com in Firefox. I will attempt to analyze and explain what's happening to the best of my abilities.
+
+![06](imgs/h1-06.png)
+
+The four captured frames are communication happening between my Linux machine (10.0.2.15) and the server of example.com (185.15.59.224). Frames 1 and 3 contain application layer data that's being encrypted using TLSv1.2 (Transport Layer Security). Frames 2 and 4 contain transport layer data using TCP (Transmission Control Protocol). The ACK refers to acknowledgment that the receiver makes to tell the data has been received [[4]](#bibliography).
+
+![07](imgs/h1-07.png)
+
+Looking more closely at the first frame, we can see the link layer information. We can see that frame is 93 bytes, and was transferred on interface eth0, which is the network interface on my Linux virtual machine. It has the MAC address of 08:00:27:04:42:0f, which lookes like a real hardware address, but I suspect is given by Kali Linux to the interface to seem real. The destination address is not a hardware address, and most likely belongs VirtualBox, which is acting as a router.
+
+![08](imgs/h1-08.png)
+
+Next we can see information on the internet layer, which again shows the source and destination IP-addresses. The addresses and version number indicate that it's using IPv4.
+
+![09](imgs/h1-09.png)
+
+On the transport layer, we can see the data is sent to port 443 , which is commonly used by HTTPS [[4]](#bibliography). There is also a bunch of other info about the TCP segment, which I don't understand.
+
+![10](imgs/h1-10.png)
+
+Finally is the application layer, which contains the actual data shown by my browser, that's been encrypted using TLS. The TLS version being used is 1.2. The application data is 34 bytes long. The 'encrypted application data' field shows the actual data in hexadecimal. We can also see that TLS is working on top of HTTP.
 
 ## Bibliography
 
@@ -100,3 +120,9 @@ T. Karvinen, “Wireshark - Getting Started,” Terokarvinen.com, 2025. https://
 
 [3]
 T. Karvinen, “Network Interface Names on Linux - wlp4s0 lo enp1s0,” Terokarvinen.com, 2025. https://terokarvinen.com/network-interface-linux/ (accessed Apr. 01, 2025).
+
+[4]
+Wikipedia Contributors, “Transport Layer Security,” Wikipedia, Mar. 26, 2019. https://en.wikipedia.org/wiki/Transport_Layer_Security (accessed Apr. 02, 2025).
+
+[5]
+Wikipedia Contributors, “Internet Protocol Suite,” Wikipedia, Mar. 25, 2019. https://en.wikipedia.org/wiki/Internet_Protocol_Suite (accessed Apr. 02, 2025).
