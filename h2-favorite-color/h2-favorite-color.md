@@ -1,10 +1,10 @@
 # Homework
 
-Homework report for [h1 favorite color: violet](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h2-lempivari-violetti) [[1]](#bibliography)
+Homework report for [h2 favorite color: violet](https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/#h2-lempivari-violetti) [[1]](#bibliography)
 
 ## Table of Contents
 
-- [1. Introduction](#1-introduction)
+- [Introduction](#1-introduction)
 - [x. Read and answer questions in short](#x-read-and-answer-questions-in-short)
 - [a. Apache log](#a-apache-log)
 - [b. Nmapped](#b-nmapped)
