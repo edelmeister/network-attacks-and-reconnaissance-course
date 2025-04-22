@@ -84,7 +84,7 @@ The error logs keep pointing to the same problem of Cython not existing.
 
 I tried installing Cython3 with the apt package-manager, but that didn't fix the problem either.
 
-Finally, I decided to just install URH on my host Windows machine in order to continue with the exercises.
+Finally, I decided to just install URH (from the project's GitHub [[7]](#bibliography)) on my host Windows machine in order to continue with the exercises.
 
 ## e. Overview
 
@@ -125,3 +125,6 @@ Wikipedia Contributors, “NHK Radio 1,” Wikipedia, Dec. 24, 2024. https://en.
 
 [6]
 Athom B.V., “KlikAanKlikUit,” Homey.app, 2025. https://homey.app/en-us/works-with-homey/klikaanklikuit/ (accessed Apr. 16, 2025).
+
+[7]
+J. Pohl, “jopohl/urh,” GitHub, May 24, 2022. https://github.com/jopohl/urh (accessed Apr. 22, 2025).
