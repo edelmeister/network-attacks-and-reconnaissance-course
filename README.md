@@ -11,3 +11,5 @@ Authored by Santeri Edelmann.
 [h1 Sniff](h1-sniff/h1-sniff.md)
 
 [h2 Favorite color: violet](h2-favorite-color/h2-favorite-color.md)
+
+[h3 Waves](h3-waves/h3-waves.md)
